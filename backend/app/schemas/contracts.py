@@ -49,6 +49,11 @@ class NormalizedSNPRecord(_Frozen):
     allele1: str
     allele2: str
 
+class FindingStatus(StrEnum):
+    CARRIED = "carried"
+    NOT_CARRIED = "not_carried"
+    NOT_ASSESSABLE = "not_assessable"
+
 
 class Finding(_Frozen):
     """Panel lookup output: one panel variant matched against the user's genotype."""
@@ -56,8 +61,9 @@ class Finding(_Frozen):
     variant_id: str
     rsid: str
     domain: Domain
-    genotype: str
-    evidence_tier: EvidenceTier
+    status: FindingStatus
+    genotype: str | None = None
+    evidence_tier: EvidenceTier | None = None
     summary: str
     citations: list[str]
 
