@@ -46,8 +46,9 @@ class NormalizedSNPRecord(_Frozen):
     chromosome: str
     position: int
     genome_build: str
+    is_indel: bool
     allele1: str
-    allele2: str
+    allele2: str | None = None
 
 class FindingStatus(StrEnum):
     CARRIED = "carried"
