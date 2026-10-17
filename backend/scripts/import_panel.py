@@ -23,5 +23,5 @@ def fetch_ensembl(rsids):
         r.raise_for_status()
         results.update(r.json())
         time.sleep(1)
-        (RAW / "ensembl_variations.json").write_text(json.dumps(results, indent=2))
-        return results
+    (RAW / "ensembl_variations.json").write_text(json.dumps(results, indent=2))
+    return results
