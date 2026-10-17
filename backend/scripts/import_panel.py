@@ -9,7 +9,7 @@ RAW = DATA_DIR / "raw"
 RAW.mkdir(parents=True, exist_ok=True);
 
 def fetch_ensembl(rsids):
-    """Returns """
+    """Writes file with findings based on rsID"""
     results = {}
     for i in range(0, len(rsids), 50):
         chunk = rsids[i:i + 50]
@@ -25,3 +25,9 @@ def fetch_ensembl(rsids):
         time.sleep(1)
     (RAW / "ensembl_variations.json").write_text(json.dumps(results, indent=2))
     return results
+
+def main():
+    fetch_ensembl(["rs548049170"])
+
+if __name__ == "__main__":
+    main()
