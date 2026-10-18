@@ -232,3 +232,6 @@ data/raw/
 
 # dbSNP reference data
 backend/data/dbsnp/*.bz2
+
+# GWAS assicuations file
+gwas_associations_ontology_2026-10-18.zip

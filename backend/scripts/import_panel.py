@@ -27,7 +27,7 @@ def fetch_ensembl(rsids):
     return results
 
 def main():
-    fetch_ensembl(["rs548049170"])
+    fetch_ensembl(["rs62074125"])
 
 if __name__ == "__main__":
     main()
