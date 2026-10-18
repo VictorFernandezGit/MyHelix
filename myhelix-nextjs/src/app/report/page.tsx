@@ -221,7 +221,7 @@ export default function ReportPage() {
 
       <p
         role="note"
-        className="rounded-2xl border-2 border-dashed border-amber-700 bg-amber-50 px-5 py-4 text-center text-sm font-semibold text-amber-900"
+        className="rounded-2xl border-2 border-dashed border-amber-700 bg-amber-50 px-5 py-4 text-center text-2xl font-semibold text-amber-900"
       >
         ⚠ Please remember that this is not a diagnosis and is only for
         self-experimentation.
