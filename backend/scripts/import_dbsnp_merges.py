@@ -122,7 +122,7 @@ def main():
     print ("Resolving merge chains...")
     aliases = build_aliases(merges)
 
-    print("Inserting {len(aliases):,} aliases...")
+    print(f"Inserting {len(aliases):,} aliases...")
 
     insert_rsid_aliases(aliases)
 

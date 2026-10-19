@@ -149,6 +149,7 @@ activemq-data/
 
 # Environments
 .env
+.env.local
 .envrc
 .venv
 env/
@@ -232,6 +233,5 @@ data/raw/
 # dbSNP reference data
 backend/data/dbsnp/*.bz2
 
-# env files
-.env
-.env*.local
+# GWAS assicuations file
+gwas_associations_ontology_2026-10-18.zip

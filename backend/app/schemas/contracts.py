@@ -35,6 +35,7 @@ class RawSNPRecord(_Frozen):
     chromosome: str
     position: int
     genotype: str
+    is_indel: bool
     vendor: Vendor
 
 
@@ -45,8 +46,14 @@ class NormalizedSNPRecord(_Frozen):
     chromosome: str
     position: int
     genome_build: str
+    is_indel: bool
     allele1: str
-    allele2: str
+    allele2: str | None = None
+
+class FindingStatus(StrEnum):
+    CARRIED = "carried"
+    NOT_CARRIED = "not_carried"
+    NOT_ASSESSABLE = "not_assessable"
 
 
 class Finding(_Frozen):
@@ -55,8 +62,9 @@ class Finding(_Frozen):
     variant_id: str
     rsid: str
     domain: Domain
-    genotype: str
-    evidence_tier: EvidenceTier
+    status: FindingStatus
+    genotype: str | None = None
+    evidence_tier: EvidenceTier | None = None
     summary: str
     citations: list[str]
 

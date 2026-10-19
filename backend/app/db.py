@@ -10,7 +10,7 @@ load_dotenv(BASE_DIR / ".env.local")
 def insert_rsid_aliases(aliases: list[tuple[str, str]]):
     conn = psycopg2.connect(os.environ["DATABASE_URL"])
     try:
-        with conn.cursor as cur:
+        with conn.cursor() as cur:
             execute_values(
                 cur,
                  """
