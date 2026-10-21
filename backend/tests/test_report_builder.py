@@ -1,5 +1,5 @@
 from app.reporting import build_report
-from app.schemas import Domain, EvidenceTier, Finding, Vendor
+from app.schemas import Domain, EvidenceTier, Finding, FindingStatus, Vendor
 
 
 def _finding(variant_id: str, domain: Domain) -> Finding:
@@ -8,6 +8,7 @@ def _finding(variant_id: str, domain: Domain) -> Finding:
         rsid="rs0",
         domain=domain,
         genotype="AA",
+        status=FindingStatus.CARRIED,
         evidence_tier=EvidenceTier.LIMITED,
         summary="",
         citations=[],

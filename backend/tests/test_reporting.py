@@ -1,5 +1,5 @@
 from app.reporting import build_report
-from app.schemas import Domain, EvidenceTier, Finding, Vendor
+from app.schemas import Domain, EvidenceTier, Finding, FindingStatus, Vendor
 
 
 def test_build_report_groups_findings_by_domain():
@@ -9,6 +9,7 @@ def test_build_report_groups_findings_by_domain():
             rsid="rs222",
             domain=Domain.FOCUS,
             genotype="AG",
+            status=FindingStatus.CARRIED,
             evidence_tier=EvidenceTier.MODERATE,
             summary="Example focus finding.",
             citations=["https://example.com/focus"],
@@ -18,6 +19,7 @@ def test_build_report_groups_findings_by_domain():
             rsid="rs111",
             domain=Domain.MEMORY,
             genotype="AA",
+            status=FindingStatus.CARRIED,
             evidence_tier=EvidenceTier.STRONG,
             summary="Example memory finding.",
             citations=["https://example.com/memory"],
