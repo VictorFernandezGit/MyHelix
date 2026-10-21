@@ -25,7 +25,7 @@ class TwentyThreeAndMeParser:
             if len(fields) != 4:
                 raise IngestError(f"Line {line_no}: expected 4 tab-separated columns, got {len(fields)}")
             rsid, chromosome, position, genotype = (f.strip() for f in fields)
-            if genotype[0] in ["D", "I", "-"] or genotype[1] in ["D", "I", "-"]:
+            if any(allele in ["D", "I", "-"] for allele in genotype):
                 is_indel = True
             if not position.isdigit():
                 raise IngestError(f"Line {line_no}: position '{position}' is not a number")
