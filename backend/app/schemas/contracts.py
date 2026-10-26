@@ -18,7 +18,6 @@ class Domain(StrEnum):
 
 
 class EvidenceTier(StrEnum):
-    # Placeholder tiers — Jonathan owns the final tier model.
     STRONG = "strong"
     MODERATE = "moderate"
     LIMITED = "limited"

@@ -2,6 +2,7 @@ import re
 
 import pandas as pd
 from pathlib import Path
+from app.panel.evidence import evidence_tier
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 GWAS = DATA_DIR / "GWAS"
@@ -121,6 +122,9 @@ def gwas_hits() -> pd.DataFrame:
         .reset_index()
         .rename(columns={"SNPS": "rsid"})
         .sort_values(["domain", "n_papers", "best_mlog"], ascending=[True, False, False])
+    )
+    candidates["suggested_tier"] = candidates.apply(
+        lambda r: evidence_tier(r["n_papers"], r["max_sample_size"], r["best_mlog"]), axis=1
     )
     candidates["allele_conflict"] = candidates["risk_alleles"].str.contains(",")
     return candidates
