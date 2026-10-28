@@ -1,7 +1,10 @@
 import re
-
+import sys
 import pandas as pd
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+
 from app.panel.evidence import evidence_tier
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
