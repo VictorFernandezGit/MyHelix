@@ -4,12 +4,11 @@ import pandas as pd
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-
 from app.panel.evidence import evidence_tier
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-GWAS = DATA_DIR / "GWAS"
-ASSOCIATIONS = GWAS / "gwas-catalog-download-associations-alt-full.tsv"
+GWAS = DATA_DIR / "gwas"
+ASSOCIATIONS = GWAS / "gwas_associations_ontology_2026-10-18.zip"
 PROCESSED = DATA_DIR / "processed"
 OUTPUT = PROCESSED / "gwas_candidates.csv"
 

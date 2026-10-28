@@ -1,31 +1,17 @@
-import psycopg2 
-from psycopg2.extras import execute_values
+"""One shared Supabase client for the backend, using the SERVICE ROLE key.
+
+The service role bypasses row-level security, so this key must only ever live in the
+backend's .env (never in Next.js, never in git).
+"""
 import os
-from pathlib import Path
+from functools import lru_cache
+
 from dotenv import load_dotenv
+from supabase import Client, create_client
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-load_dotenv(BASE_DIR / ".env.local")
+load_dotenv()
 
-def insert_rsid_aliases(aliases: list[tuple[str, str]]):
-    conn = psycopg2.connect(os.environ["DATABASE_URL"])
-    try:
-        with conn.cursor() as cur:
-            execute_values(
-                cur,
-                 """
-                INSERT INTO rsid_alias (
-                    alias_rsid,
-                    canonical_rsid
-                )
-                VALUES %s
-                ON CONFLICT (alias_rsid)
-                DO UPDATE SET
-                    canonical_rsid = EXCLUDED.canonical_rsid
-                """,
-                aliases,
-                page_size=10_000,
-            )
-        conn.commit()
-    finally:
-        conn.close()
+
+@lru_cache(maxsize=1)
+def get_client() -> Client:
+    return create_client(os.environ["SUPABASE_URL"], os.environ["SUPABASE_SERVICE_ROLE_KEY"])
