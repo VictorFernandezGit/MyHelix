@@ -7,7 +7,6 @@ from pydantic import BaseModel, ConfigDict
 
 class Vendor(StrEnum):
     TWENTYTHREE_AND_ME = "23andme"
-    ANCESTRY_DNA = "ancestrydna"
 
 
 class Domain(StrEnum):
@@ -18,7 +17,6 @@ class Domain(StrEnum):
 
 
 class EvidenceTier(StrEnum):
-    # Placeholder tiers — Jonathan owns the final tier model.
     STRONG = "strong"
     MODERATE = "moderate"
     LIMITED = "limited"
@@ -53,7 +51,8 @@ class NormalizedSNPRecord(_Frozen):
 class FindingStatus(StrEnum):
     CARRIED = "carried"
     NOT_CARRIED = "not_carried"
-    NOT_ASSESSABLE = "not_assessable"
+    NO_CALL = "no_call"
+    NOT_ON_CHIP = "not_on_chip"
 
 
 class Finding(_Frozen):
@@ -69,7 +68,18 @@ class Finding(_Frozen):
     citations: list[str]
 
 
+class PopularMarkerFinding(_Frozen):
+    rsid: str
+    gene: str
+    domain: Domain
+    genotype: str | None = None
+    common_claim: str
+    evidence_note: str
+    citations: list[str]
+
+
 class Report(_Frozen):
     vendor: Vendor
     findings_by_domain: dict[Domain, list[Finding]]
     panel_version: str
+    popular_markers: list[PopularMarkerFinding] = []
