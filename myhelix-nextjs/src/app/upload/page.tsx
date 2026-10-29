@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import LogoutButton from "@/components/LogoutButton";
 import Link from "next/dist/client/link";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+
 export default function UploadPage() {
   const [status, setStatus] = useState<string>("");
+  const router = useRouter();
 
   async function handleUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -34,19 +38,55 @@ export default function UploadPage() {
       return;
     }
 
-    const { error: dbError } = await supabase.from("uploads").insert({
-      user_id: user.id,
-      file_name: file.name,
-      storage_path: filePath,
-      status: "pending",
-    });
+    const { data: upload, error: dbError } = await supabase
+      .from("uploads")
+      .insert({
+        user_id: user.id,
+        file_name: file.name,
+        storage_path: filePath,
+        status: "pending",
+      })
+      .select("id")
+      .single();
 
-    if (dbError) {
-      setStatus(`Saved file but failed to save metadata: ${dbError.message}`);
+    if (dbError || !upload) {
+      setStatus(`Saved file but failed to save metadata: ${dbError?.message}`);
       return;
     }
 
-    setStatus("Upload complete - processing will begin shortly");
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+
+    setStatus("Processing...");
+    const res = await fetch(`${API_URL}/process/${upload.id}`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${session?.access_token}` },
+    });
+    if (!res.ok) {
+      setStatus(`Processing failed to start: ${res.status}`);
+      return;
+    }
+
+    // check every 2s for up to 2 min, the backend updates the status when its done
+    for (let i = 0; i < 60; i++) {
+      await new Promise((r) => setTimeout(r, 2000));
+      const { data } = await supabase
+        .from("uploads")
+        .select("status")
+        .eq("id", upload.id)
+        .single();
+      if (data?.status === "failed") {
+        setStatus("Processing failed. Check that this is a 23andMe raw data file.");
+        return;
+      }
+      if (data?.status === "complete") {
+        setStatus("Report ready. Opening...");
+        router.push(`/report/test?upload=${upload.id}`);
+        return;
+      }
+    }
+    setStatus("Still processing. Check back in a minute.");
   }
 
   return (
