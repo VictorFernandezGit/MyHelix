@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import upload
+from app.api.routes import process, upload
 from app.core.config import settings
 
 app = FastAPI(title="MyHelix API")
@@ -14,6 +14,7 @@ app.add_middleware(
 )
 
 app.include_router(upload.router)
+app.include_router(process.router)
 
 
 @app.get("/health")
