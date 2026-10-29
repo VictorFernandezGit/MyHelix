@@ -50,7 +50,7 @@ def test_build_report_groups_findings_by_domain():
 
 def test_build_report_includes_empty_domains():
     report = build_report(
-        vendor=Vendor.ANCESTRY_DNA,
+        vendor=Vendor.TWENTYTHREE_AND_ME,
         findings=[],
         panel_version="0.1.0",
     )

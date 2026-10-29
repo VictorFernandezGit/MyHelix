@@ -1,0 +1,12 @@
+rsid,gene,domain,common_claim,review_pmid,catalog_rows,genome_wide_rows,domain_hits,top_traits,checked_on
+rs4680,COMT,focus_cognition,Sets dopamine clearance speed and focus style,23012269,39,39,0,COMT/HNRNPK protein level ratio in blood; CA13/COMT protein level ratio in blood; COMT/ITGB1BP2 protein level ratio in blood,2026-10-29
+rs1800497,DRD2/ANKK1,focus_cognition,Reduces dopamine D2 receptor density,23012269,0,0,0,,2026-10-29
+rs27072,SLC6A3 (DAT1),focus_cognition,Changes dopamine reuptake speed,23012269,0,0,0,,2026-10-29
+rs1611115,DBH,focus_cognition,Changes dopamine-to-norepinephrine conversion,23012269,6,5,0,blood protein amount; dopamine beta-hydroxylase measurement; amount of tumor necrosis factor receptor superfamily member 11B (human) in blood,2026-10-29
+rs1800955,DRD4,focus_cognition,Changes dopamine D4 receptor expression,23012269,1,1,0,internet addiction disorder,2026-10-29
+rs3746544,SNAP25,focus_cognition,Changes synaptic vesicle release,23012269,0,0,0,,2026-10-29
+rs6265,BDNF,memory_retention,Val66Met: neuroplasticity and memory,23012269,79,70,0,body mass index; smoking initiation; body weight,2026-10-29
+rs17070145,WWC1 (KIBRA),memory_retention,Episodic memory performance,23012269,0,0,0,,2026-10-29
+rs9536314,KL (Klotho),memory_retention,KL-VS: cognition and brain aging,23012269,0,0,0,,2026-10-29
+rs6323,MAOA,stress_resiliency,Monoamine oxidase A activity and mood,30845820,0,0,0,,2026-10-29
+rs3791878,GAD1,stress_resiliency,Glutamate-to-GABA balance,30845820,0,0,0,,2026-10-29

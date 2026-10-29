@@ -237,3 +237,9 @@ backend/data/dbsnp/*.bz2
 gwas_associations_ontology_2026-10-18.zip
 backend/data/GWAS/
 backend/data/processed/
+
+# Real genotype files (never commit)
+genome_*.txt
+genome_*.zip
+/*.docx
+backend/data/raw/

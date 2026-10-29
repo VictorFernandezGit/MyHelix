@@ -21,6 +21,7 @@ COLS = [
     "CHR_POS",
     "MAPPED_GENE",
     "INITIAL SAMPLE SIZE",
+    "REPLICATION SAMPLE SIZE",
 ]
 
 MIN_MLOG = 7.3
@@ -83,6 +84,7 @@ def filter_chunk(chunk: pd.DataFrame) -> pd.DataFrame:
     chunk = chunk[chunk["PVALUE_MLOG"] >= MIN_MLOG]
     chunk["sample_size"] = chunk["INITIAL SAMPLE SIZE"].map(sample_size)
     chunk = chunk[chunk["sample_size"] >= MIN_SAMPLE_SIZE]
+    chunk["replication_size"] = chunk["REPLICATION SAMPLE SIZE"].map(sample_size)
     chunk = chunk[chunk["SNPS"].str.fullmatch(r"rs\d+", na=False)]
 
     chunk["domain"] = chunk["MAPPED_TRAIT"].fillna("").map(assign_domain)
@@ -98,6 +100,7 @@ def gwas_hits() -> pd.DataFrame:
         for chunk in pd.read_csv(ASSOCIATIONS, sep="\t", usecols=COLS, dtype=str, chunksize=200_000)
     ]
     df = pd.concat(hits, ignore_index=True)
+    df["replicated_pmid"] = df["PUBMEDID"].where(df["replication_size"] > 0)
 
     def joined(sep):
         return lambda s: sep.join(sorted(set(s.dropna())))
@@ -108,6 +111,8 @@ def gwas_hits() -> pd.DataFrame:
             n_papers=("PUBMEDID", "nunique"),
             n_studies=("STUDY ACCESSION", "nunique"),
             max_sample_size=("sample_size", "max"),
+            replicated_papers=("replicated_pmid", "nunique"),
+            max_replication_size=("replication_size", "max"),
             best_mlog=("PVALUE_MLOG", "max"),
             risk_alleles=("risk_allele", joined(",")),
             effect_sizes=("OR or BETA", joined(",")),

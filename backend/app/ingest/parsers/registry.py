@@ -1,11 +1,9 @@
 from app.ingest.errors import IngestError
-from app.ingest.parsers.ancestry_dna import AncestryDNAParser
 from app.ingest.parsers.base import Parser
 from app.ingest.parsers.twentythree_and_me import TwentyThreeAndMeParser
 
 PARSERS: list[Parser] = [
     TwentyThreeAndMeParser(),
-    AncestryDNAParser(),
 ]
 
 
