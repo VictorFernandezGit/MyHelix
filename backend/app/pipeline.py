@@ -97,7 +97,7 @@ def _save(client, upload: dict, report: Report, stats: PanelStats) -> None:
         raise
 
 
-def run_pipeline(upload_id: str) -> None:
+def run_pipeline(upload_id: str) -> str:
     client = get_client()
     upload = client.table("uploads").select("*").eq("id", upload_id).single().execute().data
     bucket = client.storage.from_(settings.uploads_bucket)
@@ -106,9 +106,11 @@ def run_pipeline(upload_id: str) -> None:
         report, stats = analyze(bucket.download(upload["storage_path"]))
         _save(client, upload, report, stats)
         _set_status(client, upload_id, "complete")
+        return "complete"
     except Exception:
         logger.exception("Pipeline failed for upload %s", upload_id)
         _set_status(client, upload_id, "failed")
+        return "failed"
     # we never keep the raw file, success or fail
     finally:
         bucket.remove([upload["storage_path"]])

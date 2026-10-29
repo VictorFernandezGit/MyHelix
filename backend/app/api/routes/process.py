@@ -1,6 +1,7 @@
 # frontend hits this after the upload finishes
-# checks the user actually owns the upload then runs the pipeline in the background
-from fastapi import APIRouter, BackgroundTasks, Header, HTTPException
+# checks the user actually owns the upload then runs the pipeline before responding
+# not a background task since vercel can kill the function once the response is sent
+from fastapi import APIRouter, Header, HTTPException
 
 from app.core.db import get_client
 from app.pipeline import run_pipeline
@@ -8,8 +9,8 @@ from app.pipeline import run_pipeline
 router = APIRouter()
 
 
-@router.post("/process/{upload_id}", status_code=202)
-def process(upload_id: str, background: BackgroundTasks, authorization: str = Header(...)) -> dict[str, str]:
+@router.post("/process/{upload_id}")
+def process(upload_id: str, authorization: str = Header(...)) -> dict[str, str]:
     client = get_client()
     token = authorization.removeprefix("Bearer ").strip()
     try:
@@ -29,5 +30,4 @@ def process(upload_id: str, background: BackgroundTasks, authorization: str = He
     if rows[0]["status"] != "pending":
         raise HTTPException(409, f"Upload is already {rows[0]['status']}")
 
-    background.add_task(run_pipeline, upload_id)
-    return {"status": "processing"}
+    return {"status": run_pipeline(upload_id)}

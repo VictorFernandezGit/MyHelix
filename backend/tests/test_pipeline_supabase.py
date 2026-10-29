@@ -100,13 +100,13 @@ class FakeClient:
 def _run(monkeypatch, file_bytes):
     client = FakeClient(file_bytes)
     monkeypatch.setattr(pipeline, "get_client", lambda: client)
-    pipeline.run_pipeline("u1")
+    client.result = pipeline.run_pipeline("u1")
     return client
 
 
 def test_run_pipeline_saves_report_and_deletes_file(monkeypatch):
     client = _run(monkeypatch, FIXTURE.read_bytes())
-    assert client.statuses == ["processing", "complete"]
+    assert client.statuses == ["processing", "complete"] and client.result == "complete"
     assert client.files == {}
     [row] = client.reports
     assert row["upload_id"] == "u1" and row["user_id"] == "user1"
@@ -120,6 +120,6 @@ def test_run_pipeline_saves_report_and_deletes_file(monkeypatch):
 
 def test_run_pipeline_failure_saves_nothing_and_deletes_file(monkeypatch):
     client = _run(monkeypatch, b"not a genome file")
-    assert client.statuses == ["processing", "failed"]
+    assert client.statuses == ["processing", "failed"] and client.result == "failed"
     assert client.reports == [] and client.findings == []
     assert client.files == {}
