@@ -1,0 +1,9 @@
+.venv
+.env
+.pytest_cache
+tests
+data/GWAS
+data/processed
+data/raw
+MY_NOTES.md
+supabase
