@@ -117,6 +117,7 @@ const TONE_CLASSES: Record<ConditionPanel["tone"], string> = {
 };
 
 export default function ReportPage() {
+  // TODO: fetch real results form the database.
   return (
     <div className="flex flex-col gap-8">
       <header className="flex items-start justify-between gap-4">
