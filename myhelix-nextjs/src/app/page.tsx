@@ -184,7 +184,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-indigo-600">
+              <p className="mb-3 text-md font-bold uppercase tracking-[0.2em] text-indigo-600">
                 Explore your data
               </p>
 
@@ -192,7 +192,7 @@ export default function Home() {
                 Choose what you want to explore.
               </h2>
 
-              <p className="mt-5 max-w-xl leading-7 text-slate-600">
+              <p className="mt-5 text-lg max-w-xl leading-7 text-slate-600">
                 Instead of overwhelming you with raw SNP data, MyHelix organizes
                 selected genetic findings into focused panels so you can explore
                 areas that interest you.
@@ -232,17 +232,17 @@ export default function Home() {
               <LockKeyhole className="h-7 w-7 text-indigo-600" />
             </div>
 
-            <h2 className="text-3xl font-bold tracking-tight">
+            <h2 className="text-4xl font-bold tracking-tight">
               Genetic data deserves careful handling.
             </h2>
 
-            <p className="mt-5 leading-7 text-slate-600">
+            <p className="mt-5 text-lg leading-7 text-slate-600">
               MyHelix is designed with privacy in mind. We want users to
               understand how their genetic information is handled and remain in
               control of their data.
             </p>
 
-            <p className="mt-4 text-sm text-slate-500">
+            <p className="mt-4 text-md text-slate-500">
               MyHelix provides educational information and is not a medical
               diagnosis or substitute for professional medical advice.
             </p>
@@ -328,9 +328,9 @@ function InsightCard({
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
       <div className="mb-4 h-2 w-10 rounded-full bg-indigo-500" />
 
-      <h3 className="font-bold">{title}</h3>
+      <h3 className="font-bold text-3xl">{title}</h3>
 
-      <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
+      <p className="mt-2 text-lg leading-6 text-slate-600">{description}</p>
     </div>
   );
 }
