@@ -8,7 +8,6 @@ const NAV_ITEMS = [
   { label: "Traits", href: "/report/traits" },
   { label: "Condition panels", href: "/report/conditions" },
   { label: "SNP explorer", href: "/report/snp-explorer" },
-  { label: "Reports", href: "/report/reports" },
   { label: "Settings", href: "/report/settings" },
 ];
 
