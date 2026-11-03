@@ -174,7 +174,7 @@ export default function UploadPage() {
 
   return (
     <div className="min-h-screen">
-      <header className="flex items-center justify-between border-b px-6 py-4">
+      <header className="flex items-center justify-between border-b border-gray-600 px-6 py-4">
         <Link href="/" className="text-xl font-bold">
           MyHelix
         </Link>
@@ -182,13 +182,13 @@ export default function UploadPage() {
       </header>
 
       <main className="flex min-h-[calc(100vh-73px)] flex-col items-center justify-center gap-4 p-6">
-        <label className="flex w-full max-w-md cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-gray-300 p-8 transition-colors hover:border-blue-400 hover:bg-blue-50">
-          <span className="text-lg font-bold text-gray-600">
+        <label className="flex w-full max-w-md cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-gray-600 p-16 transition-colors hover:border-blue-500 hover:bg-blue-50">
+          <span className="text-xl font-bold text-gray-600">
             Click to upload your genetic data file
           </span>
 
-          <span className="text-xs text-gray-400">.txt, .csv, or .zip</span>
-          <span className="text-xs text-gray-400">
+          <span className="text-sm text-gray-500">.txt, .csv, or .zip</span>
+          <span className="text-sm text-gray-500">
             Supported: 23andMe raw DNA (.txt)
           </span>
 
@@ -200,7 +200,7 @@ export default function UploadPage() {
           />
         </label>
 
-        {status && <p className="text-sm text-gray-600">{status}</p>}
+        {status && <p className="text-xl text-gray-700">{status}</p>}
       </main>
     </div>
   );
