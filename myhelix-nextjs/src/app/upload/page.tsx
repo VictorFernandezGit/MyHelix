@@ -155,7 +155,7 @@ export default function UploadPage() {
         if (data?.status === "complete") {
           setStatus("Analysis complete! Opening your report...");
 
-          router.push(`/report/test?upload=${upload.id}`);
+          router.push(`/report/?upload=${upload.id}`);
           return;
         }
       }
