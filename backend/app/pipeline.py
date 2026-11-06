@@ -2,6 +2,7 @@
 # file gets deleted at the end no matter what happens
 import logging
 from dataclasses import dataclass
+from types import SimpleNamespace
 
 from app.core.config import settings
 from app.core.db import get_client
@@ -12,6 +13,7 @@ from app.panel import PANEL_VERSION, load_panel, match_panel, panel_aliases, pan
 from app.panel.popular import match_popular
 from app.reporting import build_report
 from app.schemas import FindingStatus, Report
+from app.language.narrative import generate_overview, fallback_overview
 
 logger = logging.getLogger(__name__)
 
@@ -54,7 +56,7 @@ def _panel_version_id(client) -> str:
     return rows[0]["id"]
 
 
-def _save(client, upload: dict, report: Report, stats: PanelStats) -> None:
+def _save(client, upload: dict, report: Report, stats: PanelStats, overview: str) -> None:
     client.table("reports").upsert(
         {
             "upload_id": upload["id"],
@@ -64,6 +66,7 @@ def _save(client, upload: dict, report: Report, stats: PanelStats) -> None:
             "call_rate": stats.call_rate,
             "panel_total": stats.panel_total,
             "panel_found": stats.panel_found,
+            "overview": overview,
         },
         on_conflict="upload_id",
     ).execute()
@@ -96,6 +99,25 @@ def _save(client, upload: dict, report: Report, stats: PanelStats) -> None:
         client.table("reports").delete().eq("upload_id", upload["id"]).execute()
         raise
 
+def _narrative_results(report: Report):
+    """Convert approved report findings into the limited format used by Gemini."""
+    results = []
+
+    for findings in report.findings_by_domain.values():
+        for f in findings:
+            results.append(
+                SimpleNamespace(
+                    status=f.status.value,
+                    entry={
+                        "domain": f.domain.value,
+                        "summary": f.summary,
+                        "evidence_tier": f.evidence_tier.value,
+                    },
+                )
+            )
+
+    return results
+
 
 def run_pipeline(upload_id: str) -> str:
     client = get_client()
@@ -104,6 +126,11 @@ def run_pipeline(upload_id: str) -> str:
     _set_status(client, upload_id, "processing")
     try:
         report, stats = analyze(bucket.download(upload["storage_path"]))
+        _narrative_results = _narrative_results(report)
+        overview = generate_overview(_narrative_results)
+        if overview is None:
+            logger.warning("Gemini overview generation failed; using fallback for upload %s", upload_id)
+            overview = fallback_overview(_narrative_results)
         _save(client, upload, report, stats)
         _set_status(client, upload_id, "complete")
         return "complete"
