@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 const NAV_ITEMS = [
   { label: "Overview", href: "/report" },
@@ -13,9 +13,22 @@ const NAV_ITEMS = [
 
 export default function ReportSidebar() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  // Get the upload ID from the current URL.
+  const uploadId = searchParams.get("upload");
 
   const isActive = (href: string) =>
     href === "/report" ? pathname === href : pathname.startsWith(href);
+
+  // Preserve the selected upload when switching report pages.
+  const getHref = (href: string) => {
+    if (!uploadId || href === "/report/settings") {
+      return href;
+    }
+
+    return `${href}?upload=${encodeURIComponent(uploadId)}`;
+  };
 
   const handleDelete = () => {
     const confirmed = window.confirm(
@@ -30,14 +43,14 @@ export default function ReportSidebar() {
   return (
     <nav
       aria-label="Report sections"
-      className="flex h-full flex-col gap-3 rounded-3xl border border-slate-300 bg-white p-4"
+      className="flex h-full flex-col gap-3 rounded-3xl border-2 border-slate-400 bg-white p-4"
     >
       {NAV_ITEMS.map(({ label, href }) => {
         const active = isActive(href);
         return (
           <Link
             key={href}
-            href={href}
+            href={getHref(href)}
             aria-current={active ? "page" : undefined}
             className={`rounded-xl border-2 border-slate-800 px-4 py-3 text-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-800 focus-visible:ring-offset-2 ${
               active

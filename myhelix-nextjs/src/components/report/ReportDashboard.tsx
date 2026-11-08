@@ -145,7 +145,7 @@ function SummaryStat({
   hint?: string;
 }) {
   return (
-    <div className="rounded-2xl border border-slate-400 bg-white p-5">
+    <div className="rounded-2xl border-2 border-slate-400 bg-white p-5">
       <dt className="text-sm text-slate-500">{label}</dt>
 
       <dd className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 tabular-nums">
