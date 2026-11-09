@@ -1,6 +1,7 @@
 from app.panel.evidence import evidence_tier
 from app.panel.panel import PanelVariant, load_panel
 from app.schemas import Finding, FindingStatus, NormalizedSNPRecord
+from app.language.overview import render_overview
 
 
 def summary(v: PanelVariant) -> str:
@@ -28,14 +29,16 @@ def _status(v: PanelVariant, record: NormalizedSNPRecord | None, in_file: bool) 
 
 def _finding(v: PanelVariant, record: NormalizedSNPRecord | None, in_file: bool) -> Finding:
     genotype = record.allele1 + (record.allele2 or "") if record else None
+    tier = evidence_tier(v.max_sample_size, v.best_mlog, v.replicated_papers)
     return Finding(
         variant_id=v.rsid,
         rsid=v.rsid,
         domain=v.domain,
         status=_status(v, record, in_file),
         genotype=genotype,
-        evidence_tier=evidence_tier(v.max_sample_size, v.best_mlog, v.replicated_papers),
+        evidence_tier=tier,
         summary=summary(v),
+        overview=render_overview(v, tier),
         citations=[f"PMID:{pmid}" for pmid in v.pubmed_ids],
     )
 
