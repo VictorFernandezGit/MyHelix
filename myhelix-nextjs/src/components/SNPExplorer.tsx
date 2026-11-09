@@ -320,14 +320,7 @@ export default function SNPExplorer({
       const matchesDomain =
         domain === "all" || variant.domain === domain;
 
-      const searchable = [
-        variant.rsid,
-        variant.gene,
-        ...variant.traits,
-        ...variant.aliases,
-      ]
-        .join(" ")
-        .toLowerCase();
+      const searchable = variant.domain.toLowerCase();
 
       return matchesDomain && searchable.includes(query);
     });
@@ -406,7 +399,7 @@ export default function SNPExplorer({
               type="search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search rsID, gene, or trait..."
+              placeholder="Search by domain..."
               className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
             />
 
