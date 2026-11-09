@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import LogoutButton from "@/components/LogoutButton";
 import Link from "next/link";
+import { Dna } from "lucide-react";
 
 const API_URL = (
   process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
@@ -172,16 +173,41 @@ export default function UploadPage() {
     }
   }
 
+
+  // CHANGE: the navigation bar from the /upload to the main homepage. 
   return (
     <div className="min-h-screen">
-      <header className="flex items-center justify-between border-b border-gray-600 px-6 py-4">
-        <Link href="/" className="text-xl font-bold">
-          MyHelix
-        </Link>
-        <LogoutButton />
-      </header>
+      <nav className="border-b border-slate-200 bg-[#f7f5ff]">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
+          <Link href="/" className="flex items-center gap-2">
 
-      <main className="flex min-h-[calc(100vh-73px)] flex-col items-center justify-center gap-4 p-6">
+          
+            <Dna className="h-7 w-7 text-indigo-600" />
+            <span className="text-2xl font-bold tracking-tight">MyHelix</span>
+          </Link>
+
+          <div className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+            <a href="/#how-it-works" className="transition hover:text-slate-950">
+              How it works
+            </a>
+
+            <a
+              href="/#what-we-analyze"
+              className="transition hover:text-slate-950"
+            >
+              What we analyze
+            </a>
+
+            <a href="/#privacy" className="transition hover:text-slate-950">
+              Privacy
+            </a>
+          </div>
+
+          <LogoutButton />
+        </div>
+      </nav>
+
+      <main className="flex min-h-[calc(100vh-77px)] flex-col items-center justify-center gap-4 p-6">
         <label className="flex w-full max-w-md cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-gray-600 p-16 transition-colors hover:border-blue-500 hover:bg-blue-50">
           <span className="text-xl font-bold text-gray-600">
             Click to upload your genetic data file
