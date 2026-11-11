@@ -78,6 +78,7 @@ def _save(client, upload: dict, report: Report, stats: PanelStats) -> None:
             "status": f.status.value,
             "evidence_tier": f.evidence_tier.value,
             "summary": f.summary,
+            "overview": f.overview,
             "citations": f.citations,
         }
         for fs in report.findings_by_domain.values()

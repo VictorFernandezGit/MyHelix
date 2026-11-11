@@ -1,0 +1,987 @@
+[
+  {
+    "rsid": "rs1473634",
+    "domain": "focus_cognition",
+    "risk_allele": "A",
+    "gene": "LINC02153 - LINC03093",
+    "chromosome": "8",
+    "position_grch38": 21057805,
+    "position_grch37": 20915316,
+    "n_papers": 5,
+    "max_sample_size": 402382,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 12.096910013008056,
+    "effect_sizes": [
+      "0.0168524",
+      "0.0179",
+      "0.0191",
+      "0.041697077",
+      "5.536",
+      "6.073"
+    ],
+    "pubmed_ids": [
+      "29844566",
+      "29942086",
+      "30038396",
+      "33414549",
+      "40374629"
+    ],
+    "study_accessions": [
+      "GCST006250",
+      "GCST006269",
+      "GCST006570",
+      "GCST006572",
+      "GCST90011875",
+      "GCST90565842"
+    ],
+    "traits": [
+      "cognitive function measurement",
+      "self reported educational attainment",
+      "intelligence"
+    ],
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "aliases": [
+      "rs17263508",
+      "rs57556824"
+    ]
+  },
+  {
+    "rsid": "rs13253386",
+    "domain": "focus_cognition",
+    "risk_allele": "T",
+    "gene": "SGCZ",
+    "chromosome": "8",
+    "position_grch38": 14144511,
+    "position_grch37": 14002020,
+    "n_papers": 4,
+    "max_sample_size": 300486,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 12.69897000433602,
+    "effect_sizes": [
+      "0.0184",
+      "0.040173482",
+      "6.209",
+      "7.326"
+    ],
+    "pubmed_ids": [
+      "29844566",
+      "29942086",
+      "30038396",
+      "33414549"
+    ],
+    "study_accessions": [
+      "GCST006250",
+      "GCST006269",
+      "GCST006572",
+      "GCST90011875"
+    ],
+    "traits": [
+      "cognitive function measurement",
+      "self reported educational attainment",
+      "intelligence"
+    ],
+    "alleles": [
+      "T",
+      "G"
+    ],
+    "aliases": [
+      "rs58650215",
+      "rs74303158"
+    ]
+  },
+  {
+    "rsid": "rs830383",
+    "domain": "focus_cognition",
+    "risk_allele": "A",
+    "gene": "RPL7P20 - RPLP0P9",
+    "chromosome": "5",
+    "position_grch38": 166046189,
+    "position_grch37": 165473194,
+    "n_papers": 4,
+    "max_sample_size": 269867,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 10.397940008672036,
+    "effect_sizes": [
+      "0.016830707",
+      "0.0195",
+      "0.042900216",
+      "5.512"
+    ],
+    "pubmed_ids": [
+      "29326435",
+      "29942086",
+      "30038396",
+      "33414549"
+    ],
+    "study_accessions": [
+      "GCST005316",
+      "GCST006250",
+      "GCST006572",
+      "GCST90011875"
+    ],
+    "traits": [
+      "cognitive function measurement",
+      "self reported educational attainment",
+      "intelligence"
+    ],
+    "alleles": [
+      "A",
+      "C",
+      "G",
+      "T"
+    ],
+    "aliases": [
+      "rs59750185"
+    ]
+  },
+  {
+    "rsid": "rs13010010",
+    "domain": "focus_cognition",
+    "risk_allele": "T",
+    "gene": "LINC01104",
+    "chromosome": "2",
+    "position_grch38": 100236272,
+    "position_grch37": 100852734,
+    "n_papers": 3,
+    "max_sample_size": 248482,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 19.221848749616356,
+    "effect_sizes": [
+      "0.027633533",
+      "5.654",
+      "6.57"
+    ],
+    "pubmed_ids": [
+      "28530673",
+      "29326435",
+      "29520040"
+    ],
+    "study_accessions": [
+      "GCST004364",
+      "GCST005316",
+      "GCST007044"
+    ],
+    "traits": [
+      "intelligence"
+    ],
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "aliases": [
+      "rs59831451"
+    ]
+  },
+  {
+    "rsid": "rs13100903",
+    "domain": "focus_cognition",
+    "risk_allele": "T",
+    "gene": "SEMA3F-AS1",
+    "chromosome": "3",
+    "position_grch38": 50137139,
+    "position_grch37": 50174572,
+    "n_papers": 3,
+    "max_sample_size": 269867,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 17.30102999566398,
+    "effect_sizes": [
+      "0.0218195",
+      "0.024482608",
+      "8.651"
+    ],
+    "pubmed_ids": [
+      "29326435",
+      "29942086",
+      "42092107"
+    ],
+    "study_accessions": [
+      "GCST005316",
+      "GCST006250",
+      "GCST90832687"
+    ],
+    "traits": [
+      "intelligence"
+    ],
+    "alleles": [
+      "C",
+      "A",
+      "T"
+    ],
+    "aliases": [
+      "rs61437580"
+    ]
+  },
+  {
+    "rsid": "rs7038525",
+    "domain": "focus_cognition",
+    "risk_allele": "T",
+    "gene": "ELAVL2",
+    "chromosome": "9",
+    "position_grch38": 23772279,
+    "position_grch37": 23772277,
+    "n_papers": 3,
+    "max_sample_size": 402382,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 15.0,
+    "effect_sizes": [
+      "0.0241",
+      "5.929",
+      "5.957"
+    ],
+    "pubmed_ids": [
+      "29844566",
+      "29942086",
+      "30038396"
+    ],
+    "study_accessions": [
+      "GCST006250",
+      "GCST006269",
+      "GCST006570"
+    ],
+    "traits": [
+      "cognitive function measurement",
+      "intelligence"
+    ],
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "aliases": [
+      "rs56972307"
+    ]
+  },
+  {
+    "rsid": "rs3896224",
+    "domain": "focus_cognition",
+    "risk_allele": "A",
+    "gene": "SORCS3",
+    "chromosome": "10",
+    "position_grch38": 104708095,
+    "position_grch37": 106467853,
+    "n_papers": 3,
+    "max_sample_size": 402382,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 13.30102999566398,
+    "effect_sizes": [
+      "0.015215",
+      "0.0175",
+      "5.525"
+    ],
+    "pubmed_ids": [
+      "29942086",
+      "30038396",
+      "40374629"
+    ],
+    "study_accessions": [
+      "GCST006250",
+      "GCST006570",
+      "GCST90565842"
+    ],
+    "traits": [
+      "cognitive function measurement",
+      "intelligence"
+    ],
+    "alleles": [
+      "A",
+      "C",
+      "G"
+    ],
+    "aliases": [
+      "rs57433704"
+    ]
+  },
+  {
+    "rsid": "rs10010325",
+    "domain": "focus_cognition",
+    "risk_allele": "A",
+    "gene": "TET2, TET2-AS1",
+    "chromosome": "4",
+    "position_grch38": 105185196,
+    "position_grch37": 106106353,
+    "n_papers": 3,
+    "max_sample_size": 269867,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 12.397940008672036,
+    "effect_sizes": [
+      "0.016128514",
+      "0.020539",
+      "7.268"
+    ],
+    "pubmed_ids": [
+      "29326435",
+      "29942086",
+      "42092107"
+    ],
+    "study_accessions": [
+      "GCST005316",
+      "GCST006250",
+      "GCST90832687"
+    ],
+    "traits": [
+      "intelligence"
+    ],
+    "alleles": [
+      "C",
+      "A",
+      "G",
+      "T"
+    ],
+    "aliases": [
+      "rs17617151",
+      "rs59418617"
+    ]
+  },
+  {
+    "rsid": "rs1133415",
+    "domain": "memory_retention",
+    "risk_allele": "A",
+    "gene": "UQCC5",
+    "chromosome": "3",
+    "position_grch38": 52541815,
+    "position_grch37": 52575831,
+    "n_papers": 1,
+    "max_sample_size": 28909,
+    "replicated_papers": 1,
+    "max_replication_size": 3853,
+    "best_mlog": 8.522878745280337,
+    "effect_sizes": [
+      "5.923"
+    ],
+    "pubmed_ids": [
+      "35974141"
+    ],
+    "study_accessions": [
+      "GCST90162632"
+    ],
+    "traits": [
+      "memory performance"
+    ],
+    "alleles": [
+      "G",
+      "A",
+      "T"
+    ],
+    "aliases": [
+      "rs17548463",
+      "rs3087915",
+      "rs3195189",
+      "rs60293023"
+    ]
+  },
+  {
+    "rsid": "rs7999738",
+    "domain": "memory_retention",
+    "risk_allele": "C",
+    "gene": "LINC02339 - RAC1P8",
+    "chromosome": "13",
+    "position_grch38": 61771763,
+    "position_grch37": 62345896,
+    "n_papers": 1,
+    "max_sample_size": 19662,
+    "replicated_papers": 1,
+    "max_replication_size": 4293,
+    "best_mlog": 7.301029995663981,
+    "effect_sizes": [
+      "5.441"
+    ],
+    "pubmed_ids": [
+      "35974141"
+    ],
+    "study_accessions": [
+      "GCST90162633"
+    ],
+    "traits": [
+      "short-term memory"
+    ],
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "aliases": [
+      "rs12873001",
+      "rs17648073",
+      "rs57663793"
+    ]
+  },
+  {
+    "rsid": "rs17698176",
+    "domain": "processing_speed",
+    "risk_allele": "T",
+    "gene": "NSF",
+    "chromosome": "17",
+    "position_grch38": 46742229,
+    "position_grch37": 44819595,
+    "n_papers": 1,
+    "max_sample_size": 404449,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 19.69897000433602,
+    "effect_sizes": [
+      "0.0195911"
+    ],
+    "pubmed_ids": [
+      "40374629"
+    ],
+    "study_accessions": [
+      "GCST90565836"
+    ],
+    "traits": [
+      "reaction time measurement"
+    ],
+    "alleles": [
+      "T",
+      "G"
+    ],
+    "aliases": [
+      "rs111180019",
+      "rs57817423"
+    ]
+  },
+  {
+    "rsid": "rs13217795",
+    "domain": "processing_speed",
+    "risk_allele": "C",
+    "gene": "FOXO3",
+    "chromosome": "6",
+    "position_grch38": 108652895,
+    "position_grch37": 108974098,
+    "n_papers": 1,
+    "max_sample_size": 404449,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 16.69897000433602,
+    "effect_sizes": [
+      "0.0164579"
+    ],
+    "pubmed_ids": [
+      "40374629"
+    ],
+    "study_accessions": [
+      "GCST90565836"
+    ],
+    "traits": [
+      "reaction time measurement"
+    ],
+    "alleles": [
+      "C",
+      "G",
+      "T"
+    ],
+    "aliases": []
+  },
+  {
+    "rsid": "rs4500960",
+    "domain": "processing_speed",
+    "risk_allele": "C",
+    "gene": "SLC4A10",
+    "chromosome": "2",
+    "position_grch38": 161962111,
+    "position_grch37": 162818621,
+    "n_papers": 1,
+    "max_sample_size": 404449,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 12.522878745280336,
+    "effect_sizes": [
+      "0.0129022"
+    ],
+    "pubmed_ids": [
+      "40374629"
+    ],
+    "study_accessions": [
+      "GCST90565836"
+    ],
+    "traits": [
+      "reaction time measurement"
+    ],
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "aliases": [
+      "rs386593439"
+    ]
+  },
+  {
+    "rsid": "rs4673905",
+    "domain": "processing_speed",
+    "risk_allele": "A",
+    "gene": "MAIP1 - SPATS2L",
+    "chromosome": "2",
+    "position_grch38": 200299060,
+    "position_grch37": 201163783,
+    "n_papers": 1,
+    "max_sample_size": 404449,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 12.522878745280336,
+    "effect_sizes": [
+      "0.0137045",
+      "0.0149732"
+    ],
+    "pubmed_ids": [
+      "40374629"
+    ],
+    "study_accessions": [
+      "GCST90565836",
+      "GCST90565838"
+    ],
+    "traits": [
+      "reaction time measurement"
+    ],
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "aliases": [
+      "rs56581044",
+      "rs58358461"
+    ]
+  },
+  {
+    "rsid": "rs3749971",
+    "domain": "processing_speed",
+    "risk_allele": "G",
+    "gene": "OR12D3, OR5V1",
+    "chromosome": "6",
+    "position_grch38": 29374998,
+    "position_grch37": 29342775,
+    "n_papers": 1,
+    "max_sample_size": 404449,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 11.154901959985745,
+    "effect_sizes": [
+      "0.0182454"
+    ],
+    "pubmed_ids": [
+      "40374629"
+    ],
+    "study_accessions": [
+      "GCST90565836"
+    ],
+    "traits": [
+      "reaction time measurement"
+    ],
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "aliases": [
+      "rs114071887",
+      "rs118033535",
+      "rs17346008",
+      "rs58992854"
+    ]
+  },
+  {
+    "rsid": "rs10774563",
+    "domain": "processing_speed",
+    "risk_allele": "G",
+    "gene": "RPL11P5 - CABP1-DT",
+    "chromosome": "12",
+    "position_grch38": 120622977,
+    "position_grch37": 121060780,
+    "n_papers": 1,
+    "max_sample_size": 404449,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 9.0,
+    "effect_sizes": [
+      "0.0107853"
+    ],
+    "pubmed_ids": [
+      "40374629"
+    ],
+    "study_accessions": [
+      "GCST90565836"
+    ],
+    "traits": [
+      "reaction time measurement"
+    ],
+    "alleles": [
+      "G",
+      "A",
+      "C"
+    ],
+    "aliases": [
+      "rs59649799"
+    ]
+  },
+  {
+    "rsid": "rs10850031",
+    "domain": "processing_speed",
+    "risk_allele": "T",
+    "gene": "HECTD4",
+    "chromosome": "12",
+    "position_grch38": 112333259,
+    "position_grch37": 112771063,
+    "n_papers": 1,
+    "max_sample_size": 403967,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 8.698970004336019,
+    "effect_sizes": [
+      "0.0139984"
+    ],
+    "pubmed_ids": [
+      "40374629"
+    ],
+    "study_accessions": [
+      "GCST90565838"
+    ],
+    "traits": [
+      "reaction time measurement"
+    ],
+    "alleles": [
+      "T",
+      "C",
+      "G"
+    ],
+    "aliases": [
+      "rs60208286"
+    ]
+  },
+  {
+    "rsid": "rs13107325",
+    "domain": "processing_speed",
+    "risk_allele": "C",
+    "gene": "SLC39A8",
+    "chromosome": "4",
+    "position_grch38": 102267552,
+    "position_grch37": 103188709,
+    "n_papers": 1,
+    "max_sample_size": 404449,
+    "replicated_papers": 0,
+    "max_replication_size": 0,
+    "best_mlog": 8.522878745280337,
+    "effect_sizes": [
+      "0.019928"
+    ],
+    "pubmed_ids": [
+      "40374629"
+    ],
+    "study_accessions": [
+      "GCST90565836"
+    ],
+    "traits": [
+      "reaction time measurement"
+    ],
+    "alleles": [
+      "C",
+      "A",
+      "T"
+    ],
+    "aliases": [
+      "rs17225587",
+      "rs52796265",
+      "rs60329194"
+    ]
+  },
+  {
+    "rsid": "rs6882046",
+    "domain": "stress_resiliency",
+    "risk_allele": "A",
+    "gene": "MIR9-2HG",
+    "chromosome": "5",
+    "position_grch38": 88673046,
+    "position_grch37": 87968864,
+    "n_papers": 3,
+    "max_sample_size": 449484,
+    "replicated_papers": 1,
+    "max_replication_size": 122867,
+    "best_mlog": 14.522878745280336,
+    "effect_sizes": [
+      "0.010492",
+      "7.192",
+      "7.886"
+    ],
+    "pubmed_ids": [
+      "29255261",
+      "29942085",
+      "30867560"
+    ],
+    "study_accessions": [
+      "GCST005232",
+      "GCST006476",
+      "GCST007709"
+    ],
+    "traits": [
+      "neuroticism measurement"
+    ],
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "aliases": [
+      "rs58029651"
+    ]
+  },
+  {
+    "rsid": "rs4585149",
+    "domain": "stress_resiliency",
+    "risk_allele": "T",
+    "gene": "SLC66A1LP - RN7SKP46",
+    "chromosome": "3",
+    "position_grch38": 157776163,
+    "position_grch37": 157493952,
+    "n_papers": 3,
+    "max_sample_size": 449484,
+    "replicated_papers": 1,
+    "max_replication_size": 122867,
+    "best_mlog": 10.154901959985745,
+    "effect_sizes": [
+      "5.79",
+      "5.979",
+      "6.52"
+    ],
+    "pubmed_ids": [
+      "29255261",
+      "29500382",
+      "29942085"
+    ],
+    "study_accessions": [
+      "GCST005232",
+      "GCST006476",
+      "GCST006940"
+    ],
+    "traits": [
+      "neuroticism measurement"
+    ],
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "aliases": [
+      "rs17475975",
+      "rs60081618"
+    ]
+  },
+  {
+    "rsid": "rs4799461",
+    "domain": "stress_resiliency",
+    "risk_allele": "A",
+    "gene": "CELF4 - MIR4318",
+    "chromosome": "18",
+    "position_grch38": 37605895,
+    "position_grch37": 35185858,
+    "n_papers": 2,
+    "max_sample_size": 449484,
+    "replicated_papers": 1,
+    "max_replication_size": 122867,
+    "best_mlog": 21.0,
+    "effect_sizes": [
+      "9.45",
+      "9.563"
+    ],
+    "pubmed_ids": [
+      "29255261",
+      "29942085"
+    ],
+    "study_accessions": [
+      "GCST005232",
+      "GCST006476"
+    ],
+    "traits": [
+      "neuroticism measurement"
+    ],
+    "alleles": [
+      "A",
+      "C",
+      "G",
+      "T"
+    ],
+    "aliases": [
+      "rs17205843",
+      "rs59620458"
+    ]
+  },
+  {
+    "rsid": "rs2269426",
+    "domain": "stress_resiliency",
+    "risk_allele": "A",
+    "gene": "TNXB",
+    "chromosome": "6",
+    "position_grch38": 32108722,
+    "position_grch37": 32076499,
+    "n_papers": 2,
+    "max_sample_size": 523783,
+    "replicated_papers": 1,
+    "max_replication_size": 59206,
+    "best_mlog": 14.0,
+    "effect_sizes": [
+      "0.010916309",
+      "7.71"
+    ],
+    "pubmed_ids": [
+      "29500382",
+      "30643256"
+    ],
+    "study_accessions": [
+      "GCST006940",
+      "GCST007339"
+    ],
+    "traits": [
+      "neuroticism measurement"
+    ],
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "aliases": [
+      "rs115905621",
+      "rs117069099",
+      "rs148564577",
+      "rs61471280"
+    ]
+  },
+  {
+    "rsid": "rs1039916",
+    "domain": "stress_resiliency",
+    "risk_allele": "A",
+    "gene": "MFHAS1",
+    "chromosome": "8",
+    "position_grch38": 8828344,
+    "position_grch37": 8685854,
+    "n_papers": 1,
+    "max_sample_size": 329821,
+    "replicated_papers": 1,
+    "max_replication_size": 122867,
+    "best_mlog": 29.221848749616356,
+    "effect_sizes": [
+      "11.371"
+    ],
+    "pubmed_ids": [
+      "29255261"
+    ],
+    "study_accessions": [
+      "GCST005232"
+    ],
+    "traits": [
+      "neuroticism measurement"
+    ],
+    "alleles": [
+      "A",
+      "C",
+      "G",
+      "T"
+    ],
+    "aliases": [
+      "rs17768930",
+      "rs60089209"
+    ]
+  },
+  {
+    "rsid": "rs6589377",
+    "domain": "stress_resiliency",
+    "risk_allele": "A",
+    "gene": "DRD2 - TMPRSS5",
+    "chromosome": "11",
+    "position_grch38": 113485014,
+    "position_grch37": 113355736,
+    "n_papers": 1,
+    "max_sample_size": 523783,
+    "replicated_papers": 1,
+    "max_replication_size": 59206,
+    "best_mlog": 25.397940008672037,
+    "effect_sizes": [
+      "0.016052796"
+    ],
+    "pubmed_ids": [
+      "30643256"
+    ],
+    "study_accessions": [
+      "GCST007339"
+    ],
+    "traits": [
+      "neuroticism measurement"
+    ],
+    "alleles": [
+      "G",
+      "A",
+      "C",
+      "T"
+    ],
+    "aliases": [
+      "rs59355622"
+    ]
+  },
+  {
+    "rsid": "rs716508",
+    "domain": "stress_resiliency",
+    "risk_allele": "T",
+    "gene": "RBFOX1",
+    "chromosome": "16",
+    "position_grch38": 6286911,
+    "position_grch37": 6336912,
+    "n_papers": 1,
+    "max_sample_size": 523783,
+    "replicated_papers": 1,
+    "max_replication_size": 59206,
+    "best_mlog": 14.69897000433602,
+    "effect_sizes": [
+      "0.0125026"
+    ],
+    "pubmed_ids": [
+      "30643256"
+    ],
+    "study_accessions": [
+      "GCST007339"
+    ],
+    "traits": [
+      "neuroticism measurement"
+    ],
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "aliases": [
+      "rs17220095",
+      "rs56883898"
+    ]
+  },
+  {
+    "rsid": "rs9380010",
+    "domain": "stress_resiliency",
+    "risk_allele": "G",
+    "gene": "LINC01012 - GPR89P",
+    "chromosome": "6",
+    "position_grch38": 27715793,
+    "position_grch37": 27683572,
+    "n_papers": 1,
+    "max_sample_size": 523783,
+    "replicated_papers": 1,
+    "max_replication_size": 59206,
+    "best_mlog": 14.69897000433602,
+    "effect_sizes": [
+      "0.013497693"
+    ],
+    "pubmed_ids": [
+      "30643256"
+    ],
+    "study_accessions": [
+      "GCST007339"
+    ],
+    "traits": [
+      "neuroticism measurement"
+    ],
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "aliases": [
+      "rs60783483"
+    ]
+  }
+]

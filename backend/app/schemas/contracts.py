@@ -65,6 +65,7 @@ class Finding(_Frozen):
     genotype: str | None = None
     evidence_tier: EvidenceTier | None = None
     summary: str
+    overview: str
     citations: list[str]
 
 

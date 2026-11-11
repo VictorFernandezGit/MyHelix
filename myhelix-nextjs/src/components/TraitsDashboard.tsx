@@ -26,6 +26,7 @@ type Finding = {
   status: Status;
   evidence_tier: EvidenceTier;
   summary: string;
+  overview: string;
   citations: string[] | null;
 };
 
@@ -157,8 +158,8 @@ function FindingCard({ finding }: { finding: Finding }) {
       <div className="mt-4 text-md leading-7 text-slate-700">
         {readable ? (
           <div>
-            <span className="font-bold text-black">Summary: </span>
-            <span>{finding.summary}</span>
+            <span className="font-bold text-black">Overview: </span>
+            <span>{finding.overview}</span>
           </div>
         ) : (
           "This marker could not be evaluated from your uploaded DNA file. No individual finding can be inferred for this marker."
@@ -262,7 +263,7 @@ export default function TraitsPage() {
         const { data, error: findingsError } = await supabase
           .from("report_findings")
           .select(
-            "rsid, domain, genotype, status, evidence_tier, summary, citations",
+            "rsid, domain, genotype, status, evidence_tier, summary, overview, citations",
           )
           .eq("upload_id", report.upload_id);
 
