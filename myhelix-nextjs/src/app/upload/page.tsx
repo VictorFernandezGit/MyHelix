@@ -173,34 +173,34 @@ export default function UploadPage() {
     }
   }
 
-
-  // CHANGE: the navigation bar from the /upload to the main homepage. 
+  // CHANGE: the navigation bar from the /upload to the main homepage.
   return (
     <div className="min-h-screen">
       <nav className="border-b border-slate-200 bg-[#f7f5ff]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
-
-          
             <Dna className="h-7 w-7 text-indigo-600" />
             <span className="text-2xl font-bold tracking-tight">MyHelix</span>
           </Link>
 
           <div className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-            <a href="/#how-it-works" className="transition hover:text-slate-950">
+            <Link
+              href="/#how-it-works"
+              className="transition hover:text-slate-950"
+            >
               How it works
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/#what-we-analyze"
               className="transition hover:text-slate-950"
             >
               What we analyze
-            </a>
+            </Link>
 
-            <a href="/#privacy" className="transition hover:text-slate-950">
+            <Link href="/#privacy" className="transition hover:text-slate-950">
               Privacy
-            </a>
+            </Link>
           </div>
 
           <LogoutButton />

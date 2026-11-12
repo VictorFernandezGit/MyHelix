@@ -466,7 +466,7 @@ export default function ReportDashboard() {
       {popular.length > 0 && (
         <section
           aria-labelledby="popular-heading"
-          className="rounded-2xl border border-slate-400 bg-white p-5"
+          className="rounded-2xl border-2 border-slate-400 bg-white p-5"
         >
           <h2
             id="popular-heading"
@@ -480,7 +480,7 @@ export default function ReportDashboard() {
             findings.
           </p>
 
-          <ul className="mt-4 divide-y divide-slate-300">
+          <ul className="mt-4 divide-y divide-slate-400">
             {popular.map((marker) => (
               <li key={marker.rsid} className="py-6 first:pt-0 last:pb-0">
                 <div className="flex flex-wrap items-center gap-2">
@@ -515,7 +515,7 @@ export default function ReportDashboard() {
       {/* Disclaimer */}
       <p
         role="note"
-        className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900"
+        className="rounded-xl border-2 border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900"
       >
         <strong>Educational use only.</strong> Genetic associations do not
         reliably predict an individual&apos;s cognitive abilities, mental

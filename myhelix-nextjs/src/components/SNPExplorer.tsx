@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo, useState } from "react";
@@ -74,9 +73,7 @@ function VariantCard({ variant }: { variant: Variant }) {
             {variant.rsid}
           </a>
 
-          <p className="mt-1 text-sm text-gray-600">
-            {variant.gene}
-          </p>
+          <p className="mt-1 text-sm text-gray-600">{variant.gene}</p>
 
           <p className="mt-1 text-xs text-gray-500">
             {DOMAIN_NAMES[variant.domain] ?? variant.domain}
@@ -103,10 +100,10 @@ function VariantCard({ variant }: { variant: Variant }) {
 
         <p className="mt-1 text-sm leading-6 text-gray-600">
           This variant has been investigated in research involving{" "}
-          {variant.traits.join(", ") || "traits not specified"}.
-          The panel records {variant.n_papers} associated paper(s),
-          with a maximum reported sample size of{" "}
-          {formatNumber(variant.max_sample_size)} participants.
+          {variant.traits.join(", ") || "traits not specified"}. The panel
+          records {variant.n_papers} associated paper(s), with a maximum
+          reported sample size of {formatNumber(variant.max_sample_size)}{" "}
+          participants.
         </p>
       </div>
 
@@ -139,13 +136,14 @@ function VariantCard({ variant }: { variant: Variant }) {
       {expanded && (
         <div className="mt-5 space-y-5 border-t border-gray-100 pt-5">
           <section>
-            <h3 className="font-semibold text-gray-900">
-              Variant information
-            </h3>
+            <h3 className="font-semibold text-gray-900">Variant information</h3>
 
             <dl className="mt-2 grid grid-cols-2 gap-3 text-sm">
               <Detail label="Panel allele" value={variant.risk_allele} />
-              <Detail label="Possible alleles" value={variant.alleles.join(" / ")} />
+              <Detail
+                label="Possible alleles"
+                value={variant.alleles.join(" / ")}
+              />
               <Detail label="Chromosome" value={variant.chromosome} />
               <Detail
                 label="GRCh38 position"
@@ -162,9 +160,9 @@ function VariantCard({ variant }: { variant: Variant }) {
             </dl>
 
             <p className="mt-3 text-xs leading-5 text-gray-500">
-              The panel allele is a reference field in the research dataset.
-              It does not, by itself, establish whether an allele is
-              beneficial, harmful, or associated with a particular outcome.
+              The panel allele is a reference field in the research dataset. It
+              does not, by itself, establish whether an allele is beneficial,
+              harmful, or associated with a particular outcome.
             </p>
           </section>
 
@@ -181,8 +179,8 @@ function VariantCard({ variant }: { variant: Variant }) {
 
             <p className="mt-2 text-xs leading-5 text-gray-500">
               This statistic describes the strength of statistical evidence
-              against a null association in a study. It does not measure
-              the size, importance, or practical impact of an effect.
+              against a null association in a study. It does not measure the
+              size, importance, or practical impact of an effect.
             </p>
 
             {variant.effect_sizes.length > 0 && (
@@ -194,17 +192,15 @@ function VariantCard({ variant }: { variant: Variant }) {
                   {variant.effect_sizes.join(", ")}
                 </p>
                 <p className="mt-1 text-xs text-gray-500">
-                  Values are reproduced from the panel source. Their
-                  units and meanings may differ between studies.
+                  Values are reproduced from the panel source. Their units and
+                  meanings may differ between studies.
                 </p>
               </div>
             )}
           </section>
 
           <section>
-            <h3 className="font-semibold text-gray-900">
-              Research references
-            </h3>
+            <h3 className="font-semibold text-gray-900">Research references</h3>
 
             {variant.pubmed_ids.length > 0 ? (
               <ul className="mt-2 space-y-2">
@@ -274,9 +270,9 @@ function VariantCard({ variant }: { variant: Variant }) {
             </p>
 
             <p className="mt-2 text-sm leading-6 text-gray-600">
-              Genetic associations are statistical findings at the
-              population level. They do not determine an individual's
-              cognitive abilities, personality, or behavior.
+              Genetic associations are statistical findings at the population
+              level. They do not determine an individual&apos;s cognitive
+              abilities, personality, or behavior.
             </p>
           </section>
         </div>
@@ -298,18 +294,12 @@ function Detail({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <dt className="text-xs text-gray-500">{label}</dt>
-      <dd className="mt-1 break-words font-medium text-gray-800">
-        {value}
-      </dd>
+      <dd className="mt-1 break-words font-medium text-gray-800">{value}</dd>
     </div>
   );
 }
 
-export default function SNPExplorer({
-  variants,
-}: {
-  variants: Variant[];
-}) {
+export default function SNPExplorer({ variants }: { variants: Variant[] }) {
   const [search, setSearch] = useState("");
   const [domain, setDomain] = useState("all");
 
@@ -317,8 +307,7 @@ export default function SNPExplorer({
     const query = search.toLowerCase().trim();
 
     return variants.filter((variant) => {
-      const matchesDomain =
-        domain === "all" || variant.domain === domain;
+      const matchesDomain = domain === "all" || variant.domain === domain;
 
       const searchable = variant.domain.toLowerCase();
 
@@ -344,10 +333,9 @@ export default function SNPExplorer({
           </h1>
 
           <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-600">
-            Explore the scientific literature behind the genetic
-            variants included in MyHelix. Learn what researchers
-            have studied, how much evidence is available, and
-            where the limitations remain.
+            Explore the scientific literature behind the genetic variants
+            included in MyHelix. Learn what researchers have studied, how much
+            evidence is available, and where the limitations remain.
           </p>
 
           <p className="mt-4 text-sm text-gray-500">
@@ -363,12 +351,11 @@ export default function SNPExplorer({
           </h2>
 
           <p className="mt-2 text-sm leading-6 text-gray-700">
-            The entries below summarize associations reported in
-            scientific studies. An association does not prove that
-            a variant causes a trait, and population-level findings
-            cannot predict an individual's abilities or behavior.
-            The amount of research, replication, and statistical
-            evidence varies across entries.
+            The entries below summarize associations reported in scientific
+            studies. An association does not prove that a variant causes a
+            trait, and population-level findings cannot predict an
+            individual&apos;s abilities or behavior. The amount of research,
+            replication, and statistical evidence varies across entries.
           </p>
         </div>
 
@@ -382,9 +369,7 @@ export default function SNPExplorer({
               <p className="mt-1 text-2xl font-bold text-gray-900">
                 {countByDomain(item.id)}
               </p>
-              <p className="mt-1 text-xs text-gray-500">
-                Research entries
-              </p>
+              <p className="mt-1 text-xs text-gray-500">Research entries</p>
             </div>
           ))}
         </div>
@@ -452,13 +437,12 @@ export default function SNPExplorer({
           </h2>
 
           <p className="mt-2 text-sm leading-6 text-gray-500">
-            This page is an educational summary of research metadata.
-            It is not medical advice, a diagnostic tool, or a
-            prediction of individual cognitive performance or
-            psychological characteristics. Genetic associations
-            may vary across populations and study designs. The
-            original publications should be consulted for complete
-            methods, effect estimates, and limitations.
+            This page is an educational summary of research metadata. It is not
+            medical advice, a diagnostic tool, or a prediction of individual
+            cognitive performance or psychological characteristics. Genetic
+            associations may vary across populations and study designs. The
+            original publications should be consulted for complete methods,
+            effect estimates, and limitations.
           </p>
 
           <p className="mt-4 text-xs text-gray-400">

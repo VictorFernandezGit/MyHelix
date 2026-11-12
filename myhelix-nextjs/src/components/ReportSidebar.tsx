@@ -6,7 +6,6 @@ import { usePathname, useSearchParams } from "next/navigation";
 const NAV_ITEMS = [
   { label: "Overview", href: "/report" },
   { label: "Traits", href: "/report/traits" },
-  { label: "Condition panels", href: "/report/conditions" },
   { label: "SNP explorer", href: "/report/snp-explorer" },
   { label: "Settings", href: "/report/settings" },
 ];
@@ -55,7 +54,7 @@ export default function ReportSidebar() {
             className={`rounded-xl border-2 border-slate-800 px-4 py-3 text-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-800 focus-visible:ring-offset-2 ${
               active
                 ? "bg-slate-800 text-white"
-                : "bg-white text-slate-900 hover:bg-slate-100"
+                : "bg-white text-slate-900 hover:bg-slate-300"
             }`}
           >
             {label}
