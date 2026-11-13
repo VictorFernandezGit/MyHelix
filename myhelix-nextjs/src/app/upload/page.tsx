@@ -23,8 +23,9 @@ export default function UploadPage() {
     e.target.value = "";
 
     // The current pipeline supports 23andMe text exports.
-    if (!file.name.toLowerCase().endsWith(".txt")) {
-      setStatus("Please select a supported 23andMe .txt file.");
+    const fileName = file.name.toLowerCase();
+    if (!fileName.endsWith(".txt") && !fileName.endsWith(".zip")) {
+      setStatus("Please select a 23andMe .txt or .zip file.");
       return;
     }
 
@@ -213,14 +214,14 @@ export default function UploadPage() {
             Click to upload your genetic data file
           </span>
 
-          <span className="text-sm text-gray-500">.txt, .csv, or .zip</span>
+          <span className="text-sm text-gray-500">.txt or .zip</span>
           <span className="text-sm text-gray-500">
-            Supported: 23andMe raw DNA (.txt)
+            Supported: 23andMe raw DNA (.txt or .zip)
           </span>
 
           <input
             type="file"
-            accept=".txt,.csv,.zip"
+            accept=".txt,.zip"
             onChange={handleUpload}
             className="hidden"
           />
